@@ -22,9 +22,9 @@ router.get('/', (req, res) => {
   }
 });
 
-// router.post('/register', AuthUsers.register)
+router.post('/register', AuthUsers.register)
 
-// router.post('/login', AuthUsers.login)
+router.post('/login', AuthUsers.login)
 
 /*
 router.post('/message', validateJwt, AuthUsers.message)
