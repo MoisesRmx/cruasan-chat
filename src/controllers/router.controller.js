@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/clave', (req, res) => {
-  res.send(process.env)
+  res.send(process.env.SECRET, process.env.DB_URLCN)
 })
 
 // router.post('/register', AuthUsers.register)
