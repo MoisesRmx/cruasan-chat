@@ -1,0 +1,175 @@
+:root {
+  --nyaWhite: #ffffff;
+  --nyaGray: #e9e9e9;
+  --nyaVioletDark: #101b45;
+  --nyaVioletLight: #50457b;
+  --nyaVioletUltraLight: #e4d7ea;
+  --nyaRed: #e53651;
+}
+
+.mainChatNya {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+}
+
+.sidebar {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  background-color: var(--nyaWhite);
+  width: 400px;
+  height: 100%;
+  border-right: 1.5px solid var(--nyaGray);
+}
+
+.chatTools {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 70px;
+}
+
+.toolsDropdownMenu {
+  font: 500 1.5rem 'Open Sans', sans-serif;
+  color: var(--nyaVioletDark);
+  cursor: pointer;
+}
+
+input[name="searchUsers"] {
+  box-sizing: border-box;
+  width: 300px;
+  height: 70%;
+  background-color: var(--nyaGray);
+  font: 500 1rem 'Open Sans', sans-serif;
+  border: none;
+  border-radius: 50px;
+  padding: 0 20px;
+  color: var(--nyaVioletDark);
+}
+
+.chatbar {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+.chatUserProfile {
+  cursor: pointer;
+  padding: 5px 20px;
+}
+.chatUserProfile:hover {
+  background-color: var(--nyaGray);
+}
+.chatUserProfile h2 {
+  font: 500 1.2rem 'Open Sans', sans-serif;
+  color: var(--nyaVioletDark);
+  margin: 0;
+}
+.chatUserProfile span {
+  font: 300 1rem 'Open Sans', sans-serif;
+  color: var(--nyaVioletLight);
+}
+
+.chatWindow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.navChatWindow {
+  background-color: var(--nyaWhite);
+  width: 100%;
+  height: 70px;
+}
+.navChatWindow h3 {
+  font: 500 1.5rem 'Open Sans', sans-serif;
+  color: var(--nyaVioletDark);
+}
+
+.loadMessageWindow {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  scrollbar-color: var(--nyaVioletDark) transparent;
+  scrollbar-width: thin;
+  /* background-color: #151723; */
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 20px;
+}
+
+.loadMessageWindow .redc {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  padding-right: 50px;
+}
+
+.loadMessageWindow .send {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  padding-left: 50px;
+}
+
+.loadMessageWindow .redc span {
+  border-radius: 20px;
+  padding: 10px;
+  max-width: 500px;
+  background-color: var(--nyaVioletDark);
+  font: 500 1rem 'Open Sans', sans-serif;
+  color: var(--nyaWhite);
+}
+
+.loadMessageWindow .send span {
+  border-radius: 20px;
+  max-width: 500px;
+  padding: 10px;
+  background-color: var(--nyaVioletUltraLight);
+  font: 500 1rem 'Open Sans', sans-serif;
+  color: var(--nyaVioletDark);
+}
+
+#formMessage {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  flex-shrink: 0;
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  padding: 7.5px;
+}
+
+#formMessage input {
+  font: 500 1rem 'Open Sans', sans-serif;
+  color: var(--nyaVioletDark);
+  width: 80%;
+  border: none;
+  margin: 0;
+  background-color: transparent;
+  border-radius: 50px;
+}
+
+#formMessage button {
+  background-image: url("./images/send-button-icon.jpg");
+  background-size: 100%;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  border: none;
+}
