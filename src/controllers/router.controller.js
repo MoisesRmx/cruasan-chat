@@ -9,7 +9,7 @@ import { expressjwt } from 'express-jwt'
 const router = Router();
 const validateJwt = expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] })
 
-mongoose.connect(MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI)
 
 router.use('/public', express.static(path.join(`${process.cwd()}/app/public`)))
 router.use(express.json())
