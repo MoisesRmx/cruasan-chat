@@ -9,7 +9,7 @@ import { expressjwt } from 'express-jwt'
 const router = Router();
 const validateJwt = expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] })
 
-// mongoose.connect(process.env.DB_URLCN)
+mongoose.connect(process.env.DB_URLCN)
 
 router.use('/public', express.static(path.join(`${process.cwd()}/app/public`)))
 router.use(express.json())
@@ -21,10 +21,6 @@ router.get('/', (req, res) => {
     console.error(err)
   }
 });
-
-router.get('/clave', (req, res) => {
-  res.send(process.env.DB_URLCN)
-})
 
 // router.post('/register', AuthUsers.register)
 
