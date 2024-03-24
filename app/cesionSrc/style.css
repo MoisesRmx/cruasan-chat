@@ -7,16 +7,16 @@
   --nyaRed: #e53651;
 }
 
-.mainLoginNya, .mainSignupNya {
+#mainCesion {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: var(--nyaWhite);
   height: 100vh;
-
 }
 
-.logIn, .signUp {
+.formContainer {
   box-sizing: border-box;
   flex-wrap: wrap;
   display: flex;
@@ -26,25 +26,25 @@
   align-items: center;
   flex-direction: column;
   background-color: var(--nyaVioletUltraLight);
-  row-gap: 70px;
-  padding: 50px 0;
+  row-gap: 30px;
+  padding: 20px 0;
 }
 
-.logIn h3, .signUp h3 {
+.formContainer h3 {
   font: 500 2rem 'Open Sans', sans-serif;
   color: var(--nyaVioletLight);
   padding: 0;
   margin: 0;
 }
 
-.logIn p, .signUp p {
+.formContainer p {
   font: 500 1rem 'Open Sans', sans-serif;
   color: var(--nyaVioletLight);
   padding: 0;
   margin: 0;
 }
 
-.logIn p span, .signUp p span {
+.formContainer p span {
   text-decoration: none;
   color: var(--nyaRed);
   padding: 0;
@@ -52,7 +52,7 @@
   cursor: pointer;
 }
 
-#formLogin, #formSignup {
+#formData {
   width: 50%;
   min-width: 250px;
   flex-wrap: wrap;
@@ -61,7 +61,7 @@
   row-gap: 30px;
 }
 
-#formLogin input, #formSignup input {
+#formData input {
   box-sizing: border-box;
   width: 100%;
   font: 500 1rem 'Open Sans', sans-serif;
@@ -74,7 +74,7 @@
   margin: 0;
 }
 
-#formLogin button, #formSignup button {
+#formData button {
   font: 500 1.3rem 'Open Sans', sans-serif;
   box-sizing: border-box;
   width: 100%;
@@ -84,4 +84,9 @@
   border-radius: 20px;
   color: var(--nyaWhite);
   cursor: pointer;
+}
+
+#Error {
+  color: red;
+  font: 500 1rem 'Open Sans', sans-serif;
 }

@@ -43,9 +43,18 @@ const AuthUsers = {
     }
   },
   profile: async (req, res) => {
-    const { id } = req.params
-    const user = await CruasanChat.findById({ _id: id })
-    res.status(200).send(user)
+    const { body } = req
+    try {
+      const user = await CruasanChat.findOne({ email: body.email })
+      const isMatch = await bcrypt.compare(body.contraseña , user.password)
+      res.status(200).send({
+        name: user.name,
+        lastname: user.lastname,
+        friends: user.friends,
+      })
+    } catch(err) {
+      console.error(err)
+    }
   },
   message: async (req, res) => {
     const { auth } = req
@@ -61,6 +70,27 @@ const AuthUsers = {
     // a.messages.push(["redc", "oyes que crees"])
   }
 }
+
+/*
+async function obte() {
+  const body = {
+    jwt: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWZjZWQ1ZTc5YTM0MjYyZDUzZWJiNjAiLCJpYXQiOjE3MTEyNDEwMDN9.9vk8ZND2H601occ3WQUbK0dZXA05J4P03SPg3eU9WHE",
+    email: "aloramirez@nya.com"
+  }
+
+  const signToken = _id => jwt.sign({ _id }, process.env.SECRET)
+  console.log(signToken("moisesroberto"))
+  try {
+    const user = await CruasanChat.findOne({ email: body.email })
+    const isMatch = await bcrypt.compare(user._id, body.jwt)
+    console.log(isMatch)
+  } catch(err) {
+    console.error(err)
+  }
+}
+
+obte()
+  */
 
 // module.exports = AuthUsers
 
